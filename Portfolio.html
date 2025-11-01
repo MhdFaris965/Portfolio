@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muhammed Faris P — Portfolio</title>
+  <meta name="description" content="Personal portfolio of Your Name — web developer / designer / data scientist" />
+  <style>
+    /* -------------------------------
+       Simple, modern responsive portfolio
+       Single-file HTML + CSS + vanilla JS
+       Replace text and images with your own
+       ------------------------------- */
+
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#06b6d4;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max-width:1100px;
+      color-scheme: dark;
+      color: #e6eef6;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071021);}
+    a{color:var(--accent);text-decoration:none}
+
+    .wrap{max-width:var(--max-width);margin:32px auto;padding:28px;border-radius:20px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 6px 30px rgba(2,6,23,0.6);}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#8b5cf6);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav ul{display:flex;gap:12px;list-style:none;padding:0;margin:0}
+    nav a{padding:8px 12px;border-radius:10px;color:var(--muted);font-size:14px}
+    nav a:hover{background:var(--glass);color:var(--accent)}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-top:28px}
+    .hero .intro h1{font-size:36px;margin:0 0 8px}
+    .hero .intro p{color:var(--muted);line-height:1.5;margin:0 0 16px}
+    .cta{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#031024;padding:10px 14px;border-radius:10px;font-weight:600;border:none;cursor:pointer}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+
+    .profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:16px;text-align:center}
+    .profile-card img{width:100%;max-width:240px;border-radius:12px;border:3px solid rgba(255,255,255,0.03)}
+    .profile-card h3{margin:12px 0 4px}
+    .profile-card p{color:var(--muted);margin:0}
+
+    section{margin-top:36px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card);padding:18px;border-radius:12px}
+    .skills-list{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:13px}
+
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .project{display:flex;flex-direction:column;gap:10px}
+    .project .thumb{height:160px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--muted)}
+
+    footer{margin-top:40px;padding-top:18px;border-top:1px dashed rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
+
+    /* Contact form */
+    .contact-form{display:grid;gap:12px}
+    .input, textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    textarea{min-height:120px;resize:vertical}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .projects{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      nav ul{display:none}
+      header{gap:10px}
+      .wrap{margin:12px;padding:16px}
+      .grid-3{grid-template-columns:1fr}
+    }
+
+    /* small helper */
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">YF</div>
+        <div>
+          <div style="font-weight:700">Muhammed Faris P</div>
+          <div class="muted" style="font-size:13px">Data scientist  • Data Analyst • UI & UX Designer • AI Student</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="intro">
+          <h1>Hi — I'm <span style="color:var(--accent)">Muhammed Faris P</span></h1>
+          <p>“I’m a passionate Data Scientist currently pursuing BTech in Artificial Intelligence and Data Science. I specialize in building data-driven solutions using Python, Machine Learning, SQL, and Tableau to extract insights and drive intelligent decision-making.”</p>
+          <div class="cta">
+            <a href="#projects" class="btn">See Projects</a>
+            <a href="#contact" class="btn ghost">Contact Me</a>
+          </div>
+
+          <div style="margin-top:18px">
+            <strong class="muted">Currently:</strong> Open to internships & freelance projects — available from june 2025
+          </div>
+        </div>
+
+        <aside>
+          <div class="profile-card">
+            <!-- Replace with your image: recommended 400x400 -->
+            <img src="D:\1moved\study\WhatsApp Image 2025-09-03 at 18.18.27_44bea337.jpg" alt="Muhammed Faris P">
+            <h3>Muhammed Faris P <P></P></h3>
+            <p class="muted"><p class="muted">Data Scientist | AI & Data Science | Machine Learning | UI & UX </p>
+</p>
+            <p style="margin-top:12px" class="muted">Location: Kerala , India</p>
+            <div style="margin-top:12px;display:flex;gap:8px;justify-content:center">
+              <a href="#" class="btn" style="padding:8px 10px;font-size:14px">Resume</a>
+              <a href="#contact" class="btn ghost" style="padding:8px 10px;font-size:14px">Hire Me</a>
+            </div>
+          </div>
+
+          <div style="margin-top:14px" class="card">
+            <strong>Contact</strong>
+            <div class="muted" style="margin-top:8px">Email: <a href="Binu21040297@gmail.com">Binu21040297@gmail.com</a></div>
+            <div class="muted" style="margin-top:6px">Phone: +91-9645901520</div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about">
+        <div class="card">
+          <h2>About Me</h2>
+          <p class="muted">I am a BTech student in Artificial Intelligence and Data Science (or your profile). I love building user-focused websites and learning modern web technologies like React and Node.js. I enjoy solving real-world problems with code and clean design.</p>
+          <div style="margin-top:12px">
+            <strong>Key highlights:</strong>
+            <ul class="muted">
+              <li>3+ data science mini projects (portfolio links below)</li>
+              <li>Experience with Python, SQL, and Machine Learning</li>
+              <li>Learning Deep Learning, Tableau, and Data Visualization</li>
+
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" style="display:grid;grid-template-columns:2fr 1fr;gap:16px">
+        <div class="card">
+          <h2>Skills</h2>
+          <div style="margin-top:8px" class="skills-list">
+            <span class="chip">Machine Learning</span>
+            <span class="chip">Python</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Deep Learning</span>
+            <span class="chip">Tableau</span>
+            <span class="chip">Data Visualization</span>
+            <span class="chip">UI & UX</span>
+        
+          </div>
+
+          <h3 style="margin-top:16px">Tools</h3>
+          <div class="muted">VS Code · GitHub · Figma · Jupiter</div>
+        </div>
+
+        <div class="card">
+          <h3>Languages</h3>
+          <div class="muted" style="margin-top:8px">English (Fluent)</div>
+          <div class="muted" style="margin-top:6px">Malayalam (Native)</div>
+          <div class="muted" style="margin-top:6px">Tamil (speak)</div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects" style="margin-top:12px">
+          <div class="project card">
+            <div class="thumb">NASA-Asteroid-Hazard-Detection-using-Logistic-Regression-Random-Forest. </div></div>
+            <div>
+              <strong>Project Title</strong>Developed a machine learning model using Logistic Regression and Random Forest to predict whether Near-Earth Objects (NEOs) are hazardous or not, based on NASA’s asteroid dataset. Implemented data cleaning, outlier removal, and SMOTE balancing to enhance model accuracy and reliability.
+              <p class="muted"></p>
+              <div style="margin-top:8px;display:flex;gap:8px">
+                <a href="https://github.com/MhdFaris965/NASA-Asteroid-Hazard-Detection-using-Logistic-Regression-Random-Forest" class="btn">Live</a>
+                <a href="https://github.com/MhdFaris965" class="btn ghost">Code</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project card">
+            <div class="thumb">Real-Estate-House-Price-Prediction-Using-Machine-Learning</div>
+            <div>
+              <strong>Project Title</strong>
+              <p class="muted"> Real Estate House Price Prediction using Machine Learning. Built multiple regression models (Linear, Ridge, Lasso, XGBoost, etc.) to predict property prices from real-world housing data. Includes preprocessing, visualization, and model evaluation.</p>
+              <div style="margin-top:8px;display:flex;gap:8px">
+                <a href="https://github.com/MhdFaris965/Real-Estate-House-Price-Prediction-Using-Machine-Learning" class="btn">Live</a>
+                <a href="https://github.com/MhdFaris965" class="btn ghost">Code</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top:16px" class="card">
+          <strong>More projects</strong>
+          <div class="muted" style="margin-top:8px"><a>https://github.com/MhdFaris965.</a></div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:16px;margin-top:12px">
+          <div class="card">
+            <form id="contactForm" class="contact-form" onsubmit="handleSubmit(event)">
+              <div class="form-row">
+                <input class="input" type="text" id="name" placeholder="Your name" required>
+                <input class="input" type="email" id="email" placeholder="Your email" required>
+              </div>
+              <input class="input" type="text" id="subject" placeholder="Subject (optional)">
+              <textarea id="message" placeholder="Write your message" required></textarea>
+              <div style="display:flex;gap:8px;align-items:center">
+                <button class="btn" type="submit">Send Message</button>
+                <div id="formMsg" class="muted" style="font-size:14px"></div>
+              </div>
+            </form>
+          </div>
+
+          <aside>
+            <div class="card">
+              <h3>Get in touch</h3>
+              <p class="muted">Prefer chat? Message me on WhatsApp or LinkedIn.</p>
+              <div style="margin-top:8px" class="muted">LinkedIn: <a href="www.linkedin.com/in/muhammed-faris-p-">linkedin</a></div>
+              <div style="margin-top:6px" class="muted">WhatsApp: <a href="tel:+91XXXXXXXXXX">+91-9645901520</a></div>
+            </div>
+
+            <div style="margin-top:12px" class="card">
+              <h4>Availability</h4>
+              <div class="muted">Open for internships, freelance, and remote/onsite roles </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="muted">© <span id="year"></span> muhammedfaris — Built with ❤️</div>
+      <div class="muted">Designed for web • <a href="#projects">See projects</a></div>
+    </footer>
+  </div>
+
+  <script>
+    // small helpers: set year and form behaviour
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim() || 'Contact from portfolio';
+      const message = document.getElementById('message').value.trim();
+      const msgEl = document.getElementById('formMsg');
+
+      if(!name || !email || !message){
+        msgEl.textContent = 'Please fill required fields.';
+        return;
+      }
+
+      // Basic mailto fallback — good for static sites; customize to use server or form service
+      const mailto = `mailto:youremail@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\n'+message)}`;
+      window.location.href = mailto;
+      msgEl.textContent = 'Opening mail client...';
+
+      // if you want to send via AJAX, integrate an API (Formspree, Netlify Forms, or your own endpoint)
+    }
+
+    // smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const target = a.getAttribute('href');
+        if(target.length>1){
+          e.preventDefault();
+          const el = document.querySelector(target);
+          if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
